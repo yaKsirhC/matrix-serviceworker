@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(114, 114, 114);
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+canvas{
+    min-width: 750px;
+    height: 100vh;
+    width: 9999px;
+}
+
+.text{
+    line-height: 1.5;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: max-content;
+    max-width: 85vw;
+    padding: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    color:white;
+    font-family: monospace;
+
+}
+
+.animate::after{
+    content: '/';
+    animation: init 500ms infinite;
+}
+
+@keyframes init {
+    0%{
+        content: '/';
+    }
+    33%{
+        content: '-';
+    }
+    66%{
+        content: '\\';
+    }
+}
